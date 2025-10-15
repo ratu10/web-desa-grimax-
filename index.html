@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Desa Gerimax — Desa Gerimax Indah, Narmada</title>
+  <meta name="description" content="Website Desa Gerimax Indah — informasi layanan, agenda, galeri, dan lokasi." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="brand">
+        <div class="logo">GI</div>
+        <div>
+          <div class="site-title">Desa Gerimax Indah</div>
+          <div class="site-sub">Kec. Narmada — Lombok Barat</div>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#profil">Profil</a></li>
+          <li><a href="#layanan">Layanan</a></li>
+          <li><a href="#kegiatan">Kegiatan</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="home" class="hero">
+      <div class="hero-card">
+        <h1>Selamat datang di Desa Gerimax Indah</h1>
+        <p class="muted">Situs resmi yang menyediakan informasi, layanan publik, berita, galeri, dan agenda kegiatan desa.</p>
+        <div class="stats" aria-hidden>
+          <div class="stat"><div class="num" id="popCount">3.512</div><div class="lbl">Jumlah Penduduk</div></div>
+          <div class="stat"><div class="num">4</div><div class="lbl">Dusun</div></div>
+          <div class="stat"><div class="num">1</div><div class="lbl">Puskesmas</div></div>
+        </div>
+        <div class="actions">
+          <a class="cta" href="#layanan">Lihat Layanan</a>
+          <button class="btn" id="openAnn">Pengumuman</button>
+        </div>
+      </div>
+      <aside class="card aside-card">
+        <h3>Jam Layanan</h3>
+        <p class="muted">Senin — Jumat, 08:00 — 16:00</p>
+        <hr>
+        <h3>Kontak</h3>
+        <p class="muted">Sekretariat: (0370) 555-0123</p>
+      </aside>
+    </section>
+
+    <section id="profil">
+      <div class="card">
+        <h2>Profil Desa</h2>
+        <p class="lead">Desa Gerimax Indah, Kecamatan Narmada, Kabupaten Lombok Barat. Desa berbasis pertanian dan UMKM.</p>
+      </div>
+    </section>
+
+    <section id="layanan">
+      <h2>Layanan Publik</h2>
+      <div class="card">
+        <p class="muted">Layanan administrasi, pembuatan surat, informasi kependudukan.</p>
+      </div>
+    </section>
+
+    <section id="kegiatan">
+      <h2>Kegiatan & Agenda</h2>
+      <div class="card">
+        <table class="agenda-table">
+          <thead><tr><th>Tanggal</th><th>Acara</th><th>Lokasi</th></tr></thead>
+          <tbody id="agenda-table"></tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>Galeri Desa</h3>
+        <div id="gallery" class="gallery"></div>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <h2>Kontak & Lokasi</h2>
+      <div class="card">
+        <div class="row">
+          <div class="col">
+            <h3>Alamat Kantor Desa</h3>
+            <p class="muted">Jl. Kirab Remaja No.1, Dusun Kembang Kuning, Desa Gerimax Indah, Narmada, Lombok Barat</p>
+            <p class="muted">Email: desa@gerimaxindah.id</p>
+          </div>
+          <div class="col">
+            <h3>Peta Lokasi (interaktif)</h3>
+            <div id="map" class="map"></div>
+            <noscript><p class="muted">Aktifkan JavaScript untuk melihat peta interaktif.</p></noscript>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Desa Gerimax Indah</div>
+    </footer>
+  </main>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-body">
+      <button id="closeModal" class="btn">Tutup</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="assets/js/script.js" defer></script>
+  <script>
+    // Optional: to enable Google Maps JS API, set window.ADD_GOOGLE_MAPS = true and window.GMAPS_API_KEY = 'YOUR_KEY'
+    if (window.ADD_GOOGLE_MAPS && window.GMAPS_API_KEY) {
+      var s = document.createElement('script');
+      s.src = 'https://maps.googleapis.com/maps/api/js?key=' + window.GMAPS_API_KEY + '&callback=initGmaps';
+      s.async = true; s.defer = true;
+      document.head.appendChild(s);
+    }
+  </script>
+</body>
+</html>
